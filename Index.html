@@ -1,0 +1,2271 @@
+<!doctype html>
+
+<html lang="id">
+
+ <head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Raja Ampat Paradise - Wisata Bahari Terbaik Indonesia</title>
+
+  <meta name="description" content="Jelajahi keindahan Raja Ampat, surga bawah laut Indonesia dengan keanekaragaman hayati laut terkaya di dunia.">
+
+  <meta name="keywords" content="Raja Ampat, wisata bahari, diving, snorkeling, Papua Barat, Indonesia">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/_sdk/data_sdk.js"></script>
+
+  <script src="/_sdk/element_sdk.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+
+        body {
+
+            box-sizing: border-box;
+
+        }
+
+        
+
+        .parallax {
+
+            background-attachment: fixed;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+        }
+
+        
+
+        .fade-in {
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition: all 0.6s ease;
+
+        }
+
+        
+
+        .fade-in.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+        
+
+        .dark-mode {
+
+            background-color: #1a1a1a;
+
+            color: #ffffff;
+
+        }
+
+        
+
+        .dark-mode .bg-white {
+
+            background-color: #2d2d2d !important;
+
+        }
+
+        
+
+        .dark-mode .text-gray-800 {
+
+            color: #ffffff !important;
+
+        }
+
+        
+
+        .dark-mode .text-gray-600 {
+
+            color: #cccccc !important;
+
+        }
+
+        
+
+        .chatbot {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            z-index: 1000;
+
+        }
+
+        
+
+        .chatbot-window {
+
+            display: none;
+
+            position: fixed;
+
+            bottom: 80px;
+
+            right: 20px;
+
+            width: 300px;
+
+            height: 400px;
+
+            background: white;
+
+            border-radius: 10px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+            z-index: 1001;
+
+        }
+
+        
+
+        .weather-widget {
+
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            color: white;
+
+        }
+
+        
+
+        .counter {
+
+            font-size: 2.5rem;
+
+            font-weight: bold;
+
+            color: #0984e3;
+
+        }
+
+        
+
+        .gallery-item {
+
+            transition: transform 0.3s ease;
+
+        }
+
+        
+
+        .gallery-item:hover {
+
+            transform: scale(1.05);
+
+        }
+
+        
+
+        .testimonial-card {
+
+            min-height: 200px;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .virtual-tour-btn {
+
+            background: linear-gradient(45deg, #00b894, #00cec9);
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .virtual-tour-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 10px 20px rgba(0,184,148,0.3);
+
+        }
+
+    </style>
+
+  <style>@view-transition { navigation: auto; }</style>
+
+ </head>
+
+ <body class="font-sans"><!-- Header/Navbar -->
+
+  <header class="fixed top-0 w-full bg-white shadow-lg z-50 transition-all duration-300">
+
+   <nav class="container mx-auto px-4 py-3">
+
+    <div class="flex justify-between items-center">
+
+     <div class="flex items-center space-x-2"><i class="fas fa-water text-blue-600 text-2xl"></i> <span id="site-title" class="text-xl font-bold text-gray-800">Raja Ampat Paradise</span>
+
+     </div><!-- Desktop Menu -->
+
+     <div class="hidden md:flex items-center space-x-6"><a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Beranda</a> <a href="#destinations" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Destinasi</a> <a href="#gallery" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Galeri</a> <a href="#tours" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Paket Tour</a> <a href="#blog" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Blog</a> <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kontak</a> <!-- Language Switcher --> <select id="language-switcher" class="bg-transparent border border-gray-300 rounded px-2 py-1"> <option value="id">🇮🇩 ID</option> <option value="en">🇺🇸 EN</option> </select> <!-- Dark Mode Toggle --> <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 transition-colors"> <i class="fas fa-moon text-gray-700"></i> </button>
+
+     </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden"> <i class="fas fa-bars text-gray-700 text-xl"></i> </button>
+
+    </div><!-- Mobile Menu -->
+
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4"><a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Beranda</a> <a href="#destinations" class="block py-2 text-gray-700 hover:text-blue-600">Destinasi</a> <a href="#gallery" class="block py-2 text-gray-700 hover:text-blue-600">Galeri</a> <a href="#tours" class="block py-2 text-gray-700 hover:text-blue-600">Paket Tour</a> <a href="#blog" class="block py-2 text-gray-700 hover:text-blue-600">Blog</a> <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Kontak</a>
+
+    </div>
+
+   </nav>
+
+  </header><!-- Hero Section -->
+
+  <section id="home" class="relative h-screen parallax" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><defs><linearGradient id=%22ocean%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 style=%22stop-color:%23001f3f%22/><stop offset=%22100%25%22 style=%22stop-color:%2300a8cc%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23ocean)%22/><circle cx=%22200%22 cy=%22150%22 r=%2230%22 fill=%22%23ffffff%22 opacity=%220.1%22/><circle cx=%22800%22 cy=%22200%22 r=%2220%22 fill=%22%23ffffff%22 opacity=%220.15%22/><circle cx=%22400%22 cy=%22300%22 r=%2225%22 fill=%22%23ffffff%22 opacity=%220.1%22/><path d=%22M0,600 Q300,550 600,580 T1200,600 L1200,800 L0,800 Z%22 fill=%22%2300b894%22 opacity=%220.3%22/></svg>');">
+
+   <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+   <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+
+    <div class="max-w-4xl mx-auto px-4">
+
+     <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 fade-in">Discover Raja Ampat</h1>
+
+     <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 fade-in">The Crown Jewel of Marine Biodiversity</p><!-- Search Bar -->
+
+     <div class="max-w-md mx-auto mb-8 fade-in">
+
+      <div class="relative"><input type="text" id="search-input" placeholder="Cari destinasi, aktivitas..." class="w-full px-4 py-3 rounded-full text-gray-800 pl-12"> <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+
+      </div>
+
+     </div>
+
+     <div class="space-x-4 fade-in"><button class="virtual-tour-btn text-white px-8 py-3 rounded-full font-semibold"> <i class="fas fa-vr-cardboard mr-2"></i>Virtual Tour 360° </button> <button class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-800 transition-all"> Jelajahi Sekarang </button>
+
+     </div>
+
+    </div>
+
+   </div><!-- Scroll Indicator -->
+
+   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"><i class="fas fa-chevron-down text-white text-2xl"></i>
+
+   </div>
+
+  </section><!-- Statistics Counter -->
+
+  <section class="py-16 bg-blue-600 text-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="1500">
+
+       0
+
+      </div>
+
+      <p class="text-lg">Spesies Ikan</p>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="75">
+
+       0
+
+      </div>
+
+      <p class="text-lg">Persen Terumbu Karang Dunia</p>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="4">
+
+       0
+
+      </div>
+
+      <p class="text-lg">Pulau Utama</p>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="50000">
+
+       0
+
+      </div>
+
+      <p class="text-lg">Pengunjung/Tahun</p>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Weather Widget -->
+
+  <section class="py-8 bg-gray-100">
+
+   <div class="container mx-auto px-4">
+
+    <div class="weather-widget max-w-md mx-auto text-center">
+
+     <h3 class="text-xl font-bold mb-2">Cuaca Hari Ini</h3>
+
+     <div class="flex items-center justify-center space-x-4"><i class="fas fa-sun text-3xl"></i>
+
+      <div>
+
+       <div class="text-2xl font-bold">
+
+        28°C
+
+       </div>
+
+       <div class="text-sm">
+
+        Cerah, Angin Tenang
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="mt-4 text-sm">
+
+      <p>Kondisi ideal untuk diving dan snorkeling</p>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Destinations Section -->
+
+  <section id="destinations" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Destinasi Utama</h2>
+
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">Jelajahi keindahan bawah laut yang menakjubkan di berbagai spot diving terbaik Raja Ampat</p>
+
+    </div><!-- Filter Categories -->
+
+    <div class="flex flex-wrap justify-center mb-12 space-x-4"><button class="filter-btn active bg-blue-600 text-white px-6 py-2 rounded-full mb-2" data-filter="all">Semua</button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full mb-2 hover:bg-blue-600 hover:text-white transition-colors" data-filter="diving">Diving</button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full mb-2 hover:bg-blue-600 hover:text-white transition-colors" data-filter="snorkeling">Snorkeling</button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full mb-2 hover:bg-blue-600 hover:text-white transition-colors" data-filter="island">Pulau</button>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Destination Cards -->
+
+     <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden fade-in" data-category="diving">
+
+      <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center"><i class="fas fa-water text-white text-4xl"></i>
+
+      </div>
+
+      <div class="p-6">
+
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Cape Kri</h3>
+
+       <p class="text-gray-600 mb-4">Spot diving dengan rekor dunia 374 spesies ikan dalam satu kali penyelaman</p>
+
+       <div class="flex items-center justify-between"><span class="text-blue-600 font-semibold">Rp 2.500.000</span> <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Detail</button>
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden fade-in" data-category="snorkeling">
+
+      <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center"><i class="fas fa-fish text-white text-4xl"></i>
+
+      </div>
+
+      <div class="p-6">
+
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Pianemo</h3>
+
+       <p class="text-gray-600 mb-4">Laguna tersembunyi dengan pemandangan karst yang menakjubkan</p>
+
+       <div class="flex items-center justify-between"><span class="text-blue-600 font-semibold">Rp 1.800.000</span> <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Detail</button>
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden fade-in" data-category="island">
+
+      <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center"><i class="fas fa-island-tropical text-white text-4xl"></i>
+
+      </div>
+
+      <div class="p-6">
+
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Pulau Wayag</h3>
+
+       <p class="text-gray-600 mb-4">Pulau karst dengan laguna biru yang memukau dan gua-gua tersembunyi</p>
+
+       <div class="flex items-center justify-between"><span class="text-blue-600 font-semibold">Rp 3.200.000</span> <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Detail</button>
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Gallery Section -->
+
+  <section id="gallery" class="py-20 bg-gray-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Galeri Foto &amp; Video</h2>
+
+     <p class="text-xl text-gray-600">Saksikan keindahan Raja Ampat melalui lensa fotografer profesional</p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+     <div class="gallery-item bg-gradient-to-br from-blue-400 to-purple-600 h-64 rounded-lg flex items-center justify-center cursor-pointer">
+
+      <div class="text-center text-white"><i class="fas fa-play-circle text-4xl mb-2"></i>
+
+       <p>Video Underwater</p>
+
+      </div>
+
+     </div>
+
+     <div class="gallery-item bg-gradient-to-br from-green-400 to-blue-500 h-64 rounded-lg flex items-center justify-center cursor-pointer">
+
+      <div class="text-center text-white"><i class="fas fa-camera text-4xl mb-2"></i>
+
+       <p>Terumbu Karang</p>
+
+      </div>
+
+     </div>
+
+     <div class="gallery-item bg-gradient-to-br from-orange-400 to-red-500 h-64 rounded-lg flex items-center justify-center cursor-pointer">
+
+      <div class="text-center text-white"><i class="fas fa-vr-cardboard text-4xl mb-2"></i>
+
+       <p>360° Virtual Tour</p>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Tours & Tickets Section -->
+
+  <section id="tours" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Paket Tour &amp; Tiket</h2>
+
+     <p class="text-xl text-gray-600">Pilih paket wisata yang sesuai dengan kebutuhan dan budget Anda</p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Tour Package Cards -->
+
+     <div class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center hover:border-blue-500 transition-colors">
+
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Paket Basic</h3>
+
+      <div class="text-4xl font-bold text-blue-600 mb-4">
+
+       Rp 8.500.000
+
+      </div>
+
+      <p class="text-gray-600 mb-6">3 Hari 2 Malam</p>
+
+      <ul class="text-left space-y-2 mb-8">
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Transportasi PP</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Akomodasi Homestay</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>3x Diving</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Makan 3x Sehari</li>
+
+      </ul><button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">Pesan Sekarang</button>
+
+     </div>
+
+     <div class="bg-white border-2 border-blue-500 rounded-lg p-8 text-center relative">
+
+      <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm">
+
+       Populer
+
+      </div>
+
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Paket Premium</h3>
+
+      <div class="text-4xl font-bold text-blue-600 mb-4">
+
+       Rp 15.000.000
+
+      </div>
+
+      <p class="text-gray-600 mb-6">5 Hari 4 Malam</p>
+
+      <ul class="text-left space-y-2 mb-8">
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Transportasi PP</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Resort Mewah</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>8x Diving</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Private Guide</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Underwater Photography</li>
+
+      </ul><button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">Pesan Sekarang</button>
+
+     </div>
+
+     <div class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center hover:border-blue-500 transition-colors">
+
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Paket VIP</h3>
+
+      <div class="text-4xl font-bold text-blue-600 mb-4">
+
+       Rp 25.000.000
+
+      </div>
+
+      <p class="text-gray-600 mb-6">7 Hari 6 Malam</p>
+
+      <ul class="text-left space-y-2 mb-8">
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Private Yacht</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Luxury Resort</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Unlimited Diving</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Personal Butler</li>
+
+       <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Helicopter Tour</li>
+
+      </ul><button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">Pesan Sekarang</button>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Testimonials Carousel -->
+
+  <section class="py-20 bg-blue-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Testimoni Pengunjung</h2>
+
+     <p class="text-xl text-gray-600">Dengarkan pengalaman menakjubkan dari para wisatawan</p>
+
+    </div>
+
+    <div class="relative max-w-4xl mx-auto">
+
+     <div id="testimonial-carousel" class="overflow-hidden">
+
+      <div class="flex transition-transform duration-500" id="testimonial-track">
+
+       <div class="testimonial-card w-full flex-shrink-0 bg-white p-8 rounded-lg shadow-lg mx-4">
+
+        <div class="flex items-center mb-4">
+
+         <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+
+          JD
+
+         </div>
+
+         <div class="ml-4">
+
+          <h4 class="font-bold text-gray-800">John Doe</h4>
+
+          <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+          </div>
+
+         </div>
+
+        </div>
+
+        <p class="text-gray-600 italic">"Raja Ampat benar-benar surga bawah laut! Keanekaragaman hayati yang luar biasa dan pemandangan yang tak terlupakan. Highly recommended!"</p>
+
+       </div>
+
+       <div class="testimonial-card w-full flex-shrink-0 bg-white p-8 rounded-lg shadow-lg mx-4">
+
+        <div class="flex items-center mb-4">
+
+         <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+
+          SA
+
+         </div>
+
+         <div class="ml-4">
+
+          <h4 class="font-bold text-gray-800">Sarah Anderson</h4>
+
+          <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+          </div>
+
+         </div>
+
+        </div>
+
+        <p class="text-gray-600 italic">"Pengalaman diving terbaik dalam hidup saya! Guide yang profesional dan spot-spot yang menakjubkan. Pasti akan kembali lagi!"</p>
+
+       </div>
+
+      </div>
+
+     </div><button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50"> <i class="fas fa-chevron-left text-gray-600"></i> </button> <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50"> <i class="fas fa-chevron-right text-gray-600"></i> </button>
+
+    </div>
+
+   </div>
+
+  </section><!-- Blog Section -->
+
+  <section id="blog" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Blog &amp; Artikel Wisata</h2>
+
+     <p class="text-xl text-gray-600">Tips, panduan, dan cerita menarik seputar wisata Raja Ampat</p>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+     <article class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+      <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center"><i class="fas fa-newspaper text-white text-4xl"></i>
+
+      </div>
+
+      <div class="p-6">
+
+       <div class="text-sm text-gray-500 mb-2">
+
+        15 Desember 2024
+
+       </div>
+
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Tips Diving untuk Pemula di Raja Ampat</h3>
+
+       <p class="text-gray-600 mb-4">Panduan lengkap untuk pemula yang ingin menikmati keindahan bawah laut Raja Ampat dengan aman...</p><a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Baca Selengkapnya →</a>
+
+      </div>
+
+     </article>
+
+     <article class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+      <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center"><i class="fas fa-camera text-white text-4xl"></i>
+
+      </div>
+
+      <div class="p-6">
+
+       <div class="text-sm text-gray-500 mb-2">
+
+        12 Desember 2024
+
+       </div>
+
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Fotografi Underwater: Teknik dan Tips</h3>
+
+       <p class="text-gray-600 mb-4">Cara mengabadikan momen indah di bawah laut dengan hasil foto yang memukau...</p><a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Baca Selengkapnya →</a>
+
+      </div>
+
+     </article>
+
+     <article class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+      <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center"><i class="fas fa-fish text-white text-4xl"></i>
+
+      </div>
+
+      <div class="p-6">
+
+       <div class="text-sm text-gray-500 mb-2">
+
+        10 Desember 2024
+
+       </div>
+
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Konservasi Laut di Raja Ampat</h3>
+
+       <p class="text-gray-600 mb-4">Upaya pelestarian ekosistem laut dan peran wisatawan dalam menjaga kelestarian...</p><a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Baca Selengkapnya →</a>
+
+      </div>
+
+     </article>
+
+    </div>
+
+   </div>
+
+  </section><!-- Map Integration -->
+
+  <section class="py-20 bg-gray-100">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Lokasi &amp; Peta</h2>
+
+     <p class="text-xl text-gray-600">Temukan lokasi Raja Ampat dan spot-spot diving terbaik</p>
+
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-8">
+
+     <div class="h-96 bg-gradient-to-br from-blue-200 to-green-200 rounded-lg flex items-center justify-center">
+
+      <div class="text-center"><i class="fas fa-map-marked-alt text-6xl text-blue-600 mb-4"></i>
+
+       <h3 class="text-2xl font-bold text-gray-800 mb-2">Peta Interaktif Raja Ampat</h3>
+
+       <p class="text-gray-600">Klik untuk melihat lokasi detail dan rute perjalanan</p>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Contact Section -->
+
+  <section id="contact" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-16 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+
+     <p class="text-xl text-gray-600">Siap membantu merencanakan petualangan Raja Ampat Anda</p>
+
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><!-- Contact Info -->
+
+     <div class="fade-in">
+
+      <h3 class="text-2xl font-bold text-gray-800 mb-6">Informasi Kontak</h3>
+
+      <div class="space-y-4">
+
+       <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 text-xl w-8"></i> <span class="text-gray-700">Waisai, Raja Ampat, Papua Barat</span>
+
+       </div>
+
+       <div class="flex items-center"><i class="fas fa-phone text-blue-600 text-xl w-8"></i> <span id="contact-phone" class="text-gray-700">+62 951 123456</span>
+
+       </div>
+
+       <div class="flex items-center"><i class="fas fa-envelope text-blue-600 text-xl w-8"></i> <span id="contact-email" class="text-gray-700">info@rajaampat.com</span>
+
+       </div>
+
+       <div class="flex items-center"><i class="fas fa-clock text-blue-600 text-xl w-8"></i> <span class="text-gray-700">Senin - Minggu: 08:00 - 20:00 WIT</span>
+
+       </div>
+
+      </div>
+
+      <div class="mt-8">
+
+       <h4 class="text-lg font-bold text-gray-800 mb-4">Ikuti Kami</h4>
+
+       <div class="flex space-x-4"><a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors"> <i class="fab fa-facebook-f"></i> </a> <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition-colors"> <i class="fab fa-twitter"></i> </a> <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-colors"> <i class="fab fa-instagram"></i> </a> <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-colors"> <i class="fab fa-youtube"></i> </a>
+
+       </div>
+
+      </div>
+
+     </div><!-- Contact Form -->
+
+     <div class="fade-in">
+
+      <form id="contact-form" class="space-y-6">
+
+       <div><label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+
+       </div>
+
+       <div><label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+
+       </div>
+
+       <div><label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subjek</label> <select id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"> <option value="info">Informasi Umum</option> <option value="booking">Pemesanan Tour</option> <option value="complaint">Keluhan</option> <option value="suggestion">Saran</option> </select>
+
+       </div>
+
+       <div><label for="message" class="block text-sm font-medium text-gray-700 mb-2">Pesan</label> <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+
+       </div><button type="submit" id="submit-btn" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"> <span id="submit-text">Kirim Pesan</span> <i id="submit-loading" class="fas fa-spinner fa-spin ml-2 hidden"></i> </button>
+
+      </form>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Feedback Form -->
+
+  <section class="py-16 bg-gray-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="max-w-2xl mx-auto">
+
+     <div class="text-center mb-8 fade-in">
+
+      <h3 class="text-3xl font-bold text-gray-800 mb-4">Berikan Penilaian Anda</h3>
+
+      <p class="text-gray-600">Bantu kami meningkatkan layanan dengan memberikan feedback</p>
+
+     </div>
+
+     <form id="feedback-form" class="bg-white p-8 rounded-lg shadow-lg">
+
+      <div class="mb-6"><label class="block text-sm font-medium text-gray-700 mb-2">Rating Keseluruhan</label>
+
+       <div class="flex space-x-2" id="rating-stars"><i class="fas fa-star text-gray-300 text-2xl cursor-pointer hover:text-yellow-400 transition-colors" data-rating="1"></i> <i class="fas fa-star text-gray-300 text-2xl cursor-pointer hover:text-yellow-400 transition-colors" data-rating="2"></i> <i class="fas fa-star text-gray-300 text-2xl cursor-pointer hover:text-yellow-400 transition-colors" data-rating="3"></i> <i class="fas fa-star text-gray-300 text-2xl cursor-pointer hover:text-yellow-400 transition-colors" data-rating="4"></i> <i class="fas fa-star text-gray-300 text-2xl cursor-pointer hover:text-yellow-400 transition-colors" data-rating="5"></i>
+
+       </div>
+
+      </div>
+
+      <div class="mb-6"><label for="feedback-name" class="block text-sm font-medium text-gray-700 mb-2">Nama</label> <input type="text" id="feedback-name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+
+      </div>
+
+      <div class="mb-6"><label for="feedback-message" class="block text-sm font-medium text-gray-700 mb-2">Pesan Feedback</label> <textarea id="feedback-message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+
+      </div><button type="submit" id="feedback-submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"> <span id="feedback-submit-text">Kirim Feedback</span> <i id="feedback-loading" class="fas fa-spinner fa-spin ml-2 hidden"></i> </button>
+
+     </form>
+
+    </div>
+
+   </div>
+
+  </section><!-- Footer -->
+
+  <footer class="bg-gray-800 text-white py-16">
+
+   <div class="container mx-auto px-4">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+     <div>
+
+      <div class="flex items-center space-x-2 mb-4"><i class="fas fa-water text-blue-400 text-2xl"></i> <span class="text-xl font-bold">Raja Ampat Paradise</span>
+
+      </div>
+
+      <p class="text-gray-400 mb-4">Jelajahi keindahan bawah laut terbaik di dunia bersama kami. Pengalaman tak terlupakan menanti Anda di Raja Ampat.</p>
+
+      <div class="flex space-x-4"><a href="#" class="text-gray-400 hover:text-white transition-colors"> <i class="fab fa-facebook-f"></i> </a> <a href="#" class="text-gray-400 hover:text-white transition-colors"> <i class="fab fa-twitter"></i> </a> <a href="#" class="text-gray-400 hover:text-white transition-colors"> <i class="fab fa-instagram"></i> </a> <a href="#" class="text-gray-400 hover:text-white transition-colors"> <i class="fab fa-youtube"></i> </a>
+
+      </div>
+
+     </div>
+
+     <div>
+
+      <h4 class="text-lg font-bold mb-4">Destinasi</h4>
+
+      <ul class="space-y-2 text-gray-400">
+
+       <li><a href="#" class="hover:text-white transition-colors">Cape Kri</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Pianemo</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Pulau Wayag</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Arborek</a></li>
+
+      </ul>
+
+     </div>
+
+     <div>
+
+      <h4 class="text-lg font-bold mb-4">Layanan</h4>
+
+      <ul class="space-y-2 text-gray-400">
+
+       <li><a href="#" class="hover:text-white transition-colors">Paket Diving</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Snorkeling</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Island Hopping</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Photography Tour</a></li>
+
+      </ul>
+
+     </div>
+
+     <div>
+
+      <h4 class="text-lg font-bold mb-4">Kontak</h4>
+
+      <ul class="space-y-2 text-gray-400">
+
+       <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Waisai, Raja Ampat</li>
+
+       <li class="flex items-center"><i class="fas fa-phone mr-2"></i> +62 951 123456</li>
+
+       <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> info@rajaampat.com</li>
+
+      </ul>
+
+     </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+
+     <p>© 2024 Raja Ampat Paradise. All rights reserved. | Privacy Policy | Terms of Service</p>
+
+    </div>
+
+   </div>
+
+  </footer><!-- Chatbot -->
+
+  <div class="chatbot"><button id="chatbot-toggle" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors"> <i class="fas fa-comments text-xl"></i> </button>
+
+   <div id="chatbot-window" class="chatbot-window">
+
+    <div class="bg-blue-600 text-white p-4 rounded-t-lg">
+
+     <div class="flex justify-between items-center">
+
+      <h4 class="font-bold">Panduan Wisata Raja Ampat</h4><button id="chatbot-close" class="text-white hover:text-gray-200"> <i class="fas fa-times"></i> </button>
+
+     </div>
+
+    </div>
+
+    <div class="p-4 h-80 overflow-y-auto" id="chatbot-messages">
+
+     <div class="bg-gray-100 p-3 rounded-lg mb-3">
+
+      <p class="text-sm">Halo! Saya asisten virtual Raja Ampat. Ada yang bisa saya bantu?</p>
+
+     </div>
+
+    </div>
+
+    <div class="p-4 border-t">
+
+     <div class="flex"><input type="text" id="chatbot-input" placeholder="Ketik pesan..." class="flex-1 px-3 py-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"> <button id="chatbot-send" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700"> <i class="fas fa-paper-plane"></i> </button>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </div><!-- Sidebar -->
+
+  <div id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+
+   <div class="p-6">
+
+    <div class="flex justify-between items-center mb-6">
+
+     <h3 class="text-xl font-bold text-gray-800">Menu</h3><button id="sidebar-close" class="text-gray-600 hover:text-gray-800"> <i class="fas fa-times text-xl"></i> </button>
+
+    </div>
+
+    <nav class="space-y-4"><a href="#home" class="block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Beranda</a> <a href="#destinations" class="block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Destinasi</a> <a href="#gallery" class="block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Galeri</a> <a href="#tours" class="block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Paket Tour</a> <a href="#blog" class="block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Blog</a> <a href="#contact" class="block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Kontak</a>
+
+    </nav>
+
+   </div>
+
+  </div><!-- Sidebar Overlay -->
+
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+
+  <script>
+
+        // Global variables
+
+        let currentTestimonial = 0;
+
+        let selectedRating = 0;
+
+        let isDarkMode = false;
+
+        let currentLanguage = 'id';
+
+        let currentRecordCount = 0;
+
+        // Data SDK Handler
+
+        const dataHandler = {
+
+            onDataChanged(data) {
+
+                currentRecordCount = data.length;
+
+                // Update UI with stored data if needed
+
+                console.log('Data updated:', data.length, 'records');
+
+            }
+
+        };
+
+        // Element SDK Configuration
+
+        const defaultConfig = {
+
+            site_title: "Raja Ampat Paradise",
+
+            hero_title: "Discover Raja Ampat",
+
+            hero_subtitle: "The Crown Jewel of Marine Biodiversity",
+
+            contact_email: "info@rajaampat.com",
+
+            contact_phone: "+62 951 123456",
+
+            primary_color: "#2563eb",
+
+            secondary_color: "#ffffff",
+
+            text_color: "#1f2937",
+
+            accent_color: "#059669",
+
+            background_color: "#f8fafc",
+
+            font_family: "Inter",
+
+            font_size: 16
+
+        };
+
+        // Initialize SDKs
+
+        async function initializeSDKs() {
+
+            try {
+
+                if (window.dataSdk) {
+
+                    const result = await window.dataSdk.init(dataHandler);
+
+                    if (!result.isOk) {
+
+                        console.error('Failed to initialize Data SDK');
+
+                    }
+
+                }
+
+                if (window.elementSdk) {
+
+                    await window.elementSdk.init({
+
+                        defaultConfig,
+
+                        onConfigChange: async (config) => {
+
+                            // Update site title
+
+                            const siteTitle = document.getElementById('site-title');
+
+                            if (siteTitle) {
+
+                                siteTitle.textContent = config.site_title || defaultConfig.site_title;
+
+                            }
+
+                            // Update hero content
+
+                            const heroTitle = document.getElementById('hero-title');
+
+                            if (heroTitle) {
+
+                                heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+
+                            }
+
+                            const heroSubtitle = document.getElementById('hero-subtitle');
+
+                            if (heroSubtitle) {
+
+                                heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+
+                            }
+
+                            // Update contact info
+
+                            const contactEmail = document.getElementById('contact-email');
+
+                            if (contactEmail) {
+
+                                contactEmail.textContent = config.contact_email || defaultConfig.contact_email;
+
+                            }
+
+                            const contactPhone = document.getElementById('contact-phone');
+
+                            if (contactPhone) {
+
+                                contactPhone.textContent = config.contact_phone || defaultConfig.contact_phone;
+
+                            }
+
+                            // Apply colors
+
+                            const primaryColor = config.primary_color || defaultConfig.primary_color;
+
+                            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+
+                            const textColor = config.text_color || defaultConfig.text_color;
+
+                            const accentColor = config.accent_color || defaultConfig.accent_color;
+
+                            const backgroundColor = config.background_color || defaultConfig.background_color;
+
+                            document.documentElement.style.setProperty('--primary-color', primaryColor);
+
+                            document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+
+                            document.documentElement.style.setProperty('--text-color', textColor);
+
+                            document.documentElement.style.setProperty('--accent-color', accentColor);
+
+                            document.documentElement.style.setProperty('--background-color', backgroundColor);
+
+                            // Apply font
+
+                            const customFont = config.font_family || defaultConfig.font_family;
+
+                            const baseFontStack = 'system-ui, -apple-system, sans-serif';
+
+                            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+                            // Apply font size
+
+                            const baseSize = config.font_size || defaultConfig.font_size;
+
+                            document.documentElement.style.fontSize = `${baseSize}px`;
+
+                        },
+
+                        mapToCapabilities: (config) => ({
+
+                            recolorables: [
+
+                                {
+
+                                    get: () => config.primary_color || defaultConfig.primary_color,
+
+                                    set: (value) => {
+
+                                        if (window.elementSdk) {
+
+                                            window.elementSdk.setConfig({ primary_color: value });
+
+                                        }
+
+                                    }
+
+                                },
+
+                                {
+
+                                    get: () => config.secondary_color || defaultConfig.secondary_color,
+
+                                    set: (value) => {
+
+                                        if (window.elementSdk) {
+
+                                            window.elementSdk.setConfig({ secondary_color: value });
+
+                                        }
+
+                                    }
+
+                                },
+
+                                {
+
+                                    get: () => config.text_color || defaultConfig.text_color,
+
+                                    set: (value) => {
+
+                                        if (window.elementSdk) {
+
+                                            window.elementSdk.setConfig({ text_color: value });
+
+                                        }
+
+                                    }
+
+                                },
+
+                                {
+
+                                    get: () => config.accent_color || defaultConfig.accent_color,
+
+                                    set: (value) => {
+
+                                        if (window.elementSdk) {
+
+                                            window.elementSdk.setConfig({ accent_color: value });
+
+                                        }
+
+                                    }
+
+                                },
+
+                                {
+
+                                    get: () => config.background_color || defaultConfig.background_color,
+
+                                    set: (value) => {
+
+                                        if (window.elementSdk) {
+
+                                            window.elementSdk.setConfig({ background_color: value });
+
+                                        }
+
+                                    }
+
+                                }
+
+                            ],
+
+                            borderables: [],
+
+                            fontEditable: {
+
+                                get: () => config.font_family || defaultConfig.font_family,
+
+                                set: (value) => {
+
+                                    if (window.elementSdk) {
+
+                                        window.elementSdk.setConfig({ font_family: value });
+
+                                    }
+
+                                }
+
+                            },
+
+                            fontSizeable: {
+
+                                get: () => config.font_size || defaultConfig.font_size,
+
+                                set: (value) => {
+
+                                    if (window.elementSdk) {
+
+                                        window.elementSdk.setConfig({ font_size: value });
+
+                                    }
+
+                                }
+
+                            }
+
+                        }),
+
+                        mapToEditPanelValues: (config) => new Map([
+
+                            ["site_title", config.site_title || defaultConfig.site_title],
+
+                            ["hero_title", config.hero_title || defaultConfig.hero_title],
+
+                            ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+
+                            ["contact_email", config.contact_email || defaultConfig.contact_email],
+
+                            ["contact_phone", config.contact_phone || defaultConfig.contact_phone]
+
+                        ])
+
+                    });
+
+                }
+
+            } catch (error) {
+
+                console.error('SDK initialization error:', error);
+
+            }
+
+        }
+
+        // Language translations
+
+        const translations = {
+
+            id: {
+
+                home: "Beranda",
+
+                destinations: "Destinasi",
+
+                gallery: "Galeri",
+
+                tours: "Paket Tour",
+
+                blog: "Blog",
+
+                contact: "Kontak",
+
+                searchPlaceholder: "Cari destinasi, aktivitas...",
+
+                virtualTour: "Virtual Tour 360°",
+
+                exploreNow: "Jelajahi Sekarang"
+
+            },
+
+            en: {
+
+                home: "Home",
+
+                destinations: "Destinations",
+
+                gallery: "Gallery",
+
+                tours: "Tour Packages",
+
+                blog: "Blog",
+
+                contact: "Contact",
+
+                searchPlaceholder: "Search destinations, activities...",
+
+                virtualTour: "Virtual Tour 360°",
+
+                exploreNow: "Explore Now"
+
+            }
+
+        };
+
+        // Initialize everything when DOM is loaded
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            initializeSDKs();
+
+            initializeAnimations();
+
+            initializeNavigation();
+
+            initializeDarkMode();
+
+            initializeLanguageSwitcher();
+
+            initializeChatbot();
+
+            initializeTestimonialCarousel();
+
+            initializeCounters();
+
+            initializeForms();
+
+            initializeFilters();
+
+            initializeRatingSystem();
+
+        });
+
+        // Animation functions
+
+        function initializeAnimations() {
+
+            const observerOptions = {
+
+                threshold: 0.1,
+
+                rootMargin: '0px 0px -50px 0px'
+
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('visible');
+
+                    }
+
+                });
+
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+
+                observer.observe(el);
+
+            });
+
+        }
+
+        // Navigation functions
+
+        function initializeNavigation() {
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+            const sidebar = document.getElementById('sidebar');
+
+            const sidebarClose = document.getElementById('sidebar-close');
+
+            if (mobileMenuBtn && mobileMenu) {
+
+                mobileMenuBtn.addEventListener('click', () => {
+
+                    mobileMenu.classList.toggle('hidden');
+
+                });
+
+            }
+
+            // Smooth scrolling for navigation links
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+                anchor.addEventListener('click', function (e) {
+
+                    e.preventDefault();
+
+                    const target = document.querySelector(this.getAttribute('href'));
+
+                    if (target) {
+
+                        target.scrollIntoView({
+
+                            behavior: 'smooth',
+
+                            block: 'start'
+
+                        });
+
+                    }
+
+                    // Close mobile menu if open
+
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+
+                        mobileMenu.classList.add('hidden');
+
+                    }
+
+                });
+
+            });
+
+            // Sidebar functionality
+
+            if (sidebarClose && sidebar && sidebarOverlay) {
+
+                sidebarClose.addEventListener('click', () => {
+
+                    sidebar.classList.add('-translate-x-full');
+
+                    sidebarOverlay.classList.add('hidden');
+
+                });
+
+                sidebarOverlay.addEventListener('click', () => {
+
+                    sidebar.classList.add('-translate-x-full');
+
+                    sidebarOverlay.classList.add('hidden');
+
+                });
+
+            }
+
+        }
+
+        // Dark mode functionality
+
+        function initializeDarkMode() {
+
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+            
+
+            if (darkModeToggle) {
+
+                darkModeToggle.addEventListener('click', () => {
+
+                    isDarkMode = !isDarkMode;
+
+                    document.body.classList.toggle('dark-mode', isDarkMode);
+
+                    
+
+                    const icon = darkModeToggle.querySelector('i');
+
+                    if (icon) {
+
+                        icon.className = isDarkMode ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-gray-700';
+
+                    }
+
+                });
+
+            }
+
+        }
+
+        // Language switcher
+
+        function initializeLanguageSwitcher() {
+
+            const languageSwitcher = document.getElementById('language-switcher');
+
+            
+
+            if (languageSwitcher) {
+
+                languageSwitcher.addEventListener('change', (e) => {
+
+                    currentLanguage = e.target.value;
+
+                    updateLanguage();
+
+                });
+
+            }
+
+        }
+
+        function updateLanguage() {
+
+            const t = translations[currentLanguage];
+
+            
+
+            // Update navigation links
+
+            document.querySelectorAll('.nav-link').forEach((link, index) => {
+
+                const keys = ['home', 'destinations', 'gallery', 'tours', 'blog', 'contact'];
+
+                if (keys[index] && t[keys[index]]) {
+
+                    link.textContent = t[keys[index]];
+
+                }
+
+            });
+
+            // Update search placeholder
+
+            const searchInput = document.getElementById('search-input');
+
+            if (searchInput && t.searchPlaceholder) {
+
+                searchInput.placeholder = t.searchPlaceholder;
+
+            }
+
+            // Update buttons
+
+            const virtualTourBtn = document.querySelector('.virtual-tour-btn');
+
+            if (virtualTourBtn && t.virtualTour) {
+
+                virtualTourBtn.innerHTML = `<i class="fas fa-vr-cardboard mr-2"></i>${t.virtualTour}`;
+
+            }
+
+        }
+
+        // Chatbot functionality
+
+        function initializeChatbot() {
+
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+
+            const chatbotWindow = document.getElementById('chatbot-window');
+
+            const chatbotClose = document.getElementById('chatbot-close');
+
+            const chatbotSend = document.getElementById('chatbot-send');
+
+            const chatbotInput = document.getElementById('chatbot-input');
+
+            const chatbotMessages = document.getElementById('chatbot-messages');
+
+            if (chatbotToggle && chatbotWindow) {
+
+                chatbotToggle.addEventListener('click', () => {
+
+                    chatbotWindow.style.display = chatbotWindow.style.display === 'block' ? 'none' : 'block';
+
+                });
+
+            }
+
+            if (chatbotClose && chatbotWindow) {
+
+                chatbotClose.addEventListener('click', () => {
+
+                    chatbotWindow.style.display = 'none';
+
+                });
+
+            }
+
+            if (chatbotSend && chatbotInput && chatbotMessages) {
+
+                const sendMessage = () => {
+
+                    const message = chatbotInput.value.trim();
+
+                    if (message) {
+
+                        // Add user message
+
+                        const userMsg = document.createElement('div');
+
+                        userMsg.className = 'bg-blue-600 text-white p-3 rounded-lg mb-3 ml-8';
+
+                        userMsg.innerHTML = `<p class="text-sm">${message}</p>`;
+
+                        chatbotMessages.appendChild(userMsg);
+
+                        // Add bot response
+
+                        setTimeout(() => {
+
+                            const botMsg = document.createElement('div');
+
+                            botMsg.className = 'bg-gray-100 p-3 rounded-lg mb-3';
+
+                            botMsg.innerHTML = `<p class="text-sm">Terima kasih atas pertanyaan Anda tentang "${message}". Tim kami akan segera membantu Anda!</p>`;
+
+                            chatbotMessages.appendChild(botMsg);
+
+                            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                        }, 1000);
+
+                        chatbotInput.value = '';
+
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    }
+
+                };
+
+                chatbotSend.addEventListener('click', sendMessage);
+
+                chatbotInput.addEventListener('keypress', (e) => {
+
+                    if (e.key === 'Enter') {
+
+                        sendMessage();
+
+                    }
+
+                });
+
+            }
+
+        }
+
+        // Testimonial carousel
+
+        function initializeTestimonialCarousel() {
+
+            const prevBtn = document.getElementById('prev-testimonial');
+
+            const nextBtn = document.getElementById('next-testimonial');
+
+            const track = document.getElementById('testimonial-track');
+
+            if (prevBtn && nextBtn && track) {
+
+                prevBtn.addEventListener('click', () => {
+
+                    currentTestimonial = currentTestimonial > 0 ? currentTestimonial - 1 : 1;
+
+                    updateTestimonialPosition();
+
+                });
+
+                nextBtn.addEventListener('click', () => {
+
+                    currentTestimonial = currentTestimonial < 1 ? currentTestimonial + 1 : 0;
+
+                    updateTestimonialPosition();
+
+                });
+
+                // Auto-rotate testimonials
+
+                setInterval(() => {
+
+                    currentTestimonial = currentTestimonial < 1 ? currentTestimonial + 1 : 0;
+
+                    updateTestimonialPosition();
+
+                }, 5000);
+
+            }
+
+        }
+
+        function updateTestimonialPosition() {
+
+            const track = document.getElementById('testimonial-track');
+
+            if (track) {
+
+                track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+
+            }
+
+        }
+
+        // Counter animation
+
+        function initializeCounters() {
+
+            const counters = document.querySelectorAll('.counter');
+
+            
+
+            const animateCounter = (counter) => {
+
+                const target = parseInt(counter.getAttribute('data-target'));
+
+                const increment = target / 100;
+
+                let current = 0;
+
+                const updateCounter = () => {
+
+                    if (current < target) {
+
+                        current += increment;
+
+                        counter.textContent = Math.floor(current);
+
+                        requestAnimationFrame(updateCounter);
+
+                    } else {
+
+                        counter.textContent = target;
+
+                    }
+
+                };
+
+                updateCounter();
+
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        animateCounter(entry.target);
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            });
+
+            counters.forEach(counter => {
+
+                observer.observe(counter);
+
+            });
+
+        }
+
+        // Form handling
+
+        function initializeForms() {
+
+            const contactForm = document.getElementById('contact-form');
+
+            const feedbackForm = document.getElementById('feedback-form');
+
+            if (contactForm) {
+
+                contactForm.addEventListener('submit', async (e) => {
+
+                    e.preventDefault();
+
+                    
+
+                    if (currentRecordCount >= 999) {
+
+                        showMessage('Maaf, batas maksimum 999 pesan telah tercapai. Silakan hubungi kami langsung.', 'error');
+
+                        return;
+
+                    }
+
+                    const submitBtn = document.getElementById('submit-btn');
+
+                    const submitText = document.getElementById('submit-text');
+
+                    const submitLoading = document.getElementById('submit-loading');
+
+                    
+
+                    // Show loading state
+
+                    if (submitBtn && submitText && submitLoading) {
+
+                        submitBtn.disabled = true;
+
+                        submitText.textContent = 'Mengirim...';
+
+                        submitLoading.classList.remove('hidden');
+
+                    }
+
+                    const formData = new FormData(contactForm);
+
+                    const contactData = {
+
+                        id: Date.now().toString(),
+
+                        name: formData.get('name'),
+
+                        email: formData.get('email'),
+
+                        message: formData.get('message'),
+
+                        type: 'contact',
+
+                        date: new Date().toISOString()
+
+                    };
+
+                    if (window.dataSdk) {
+
+                        const result = await window.dataSdk.create(contactData);
+
+                        
+
+                        if (result.isOk) {
+
+                            showMessage('Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.', 'success');
+
+                            contactForm.reset();
+
+                        } else {
+
+                            showMessage('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.', 'error');
+
+                        }
+
+                    }
+
+                    // Reset button state
+
+                    if (submitBtn && submitText && submitLoading) {
+
+                        submitBtn.disabled = false;
+
+                        submitText.textContent = 'Kirim Pesan';
+
+                        submitLoading.classList.add('hidden');
+
+                    }
+
+                });
+
+            }
+
+            if (feedbackForm) {
+
+                feedbackForm.addEventListener('submit', async (e) => {
+
+                    e.preventDefault();
+
+                    
+
+                    if (currentRecordCount >= 999) {
+
+                        showMessage('Maaf, batas maksimum 999 feedback telah tercapai.', 'error');
+
+                        return;
+
+                    }
+
+                    const feedbackSubmit = document.getElementById('feedback-submit');
+
+                    const feedbackSubmitText = document.getElementById('feedback-submit-text');
+
+                    const feedbackLoading = document.getElementById('feedback-loading');
+
+                    
+
+                    // Show loading state
+
+                    if (feedbackSubmit && feedbackSubmitText && feedbackLoading) {
+
+                        feedbackSubmit.disabled = true;
+
+                        feedbackSubmitText.textContent = 'Mengirim...';
+
+                        feedbackLoading.classList.remove('hidden');
+
+                    }
+
+                    const feedbackData = {
+
+                        id: Date.now().toString(),
+
+                        name: document.getElementById('feedback-name').value,
+
+                        message: document.getElementById('feedback-message').value,
+
+                        rating: selectedRating,
+
+                        type: 'feedback',
+
+                        date: new Date().toISOString()
+
+                    };
+
+                    if (window.dataSdk) {
+
+                        const result = await window.dataSdk.create(feedbackData);
+
+                        
+
+                        if (result.isOk) {
+
+                            showMessage('Terima kasih atas feedback Anda!', 'success');
+
+                            feedbackForm.reset();
+
+                            resetRating();
+
+                        } else {
+
+                            showMessage('Terjadi kesalahan saat mengirim feedback. Silakan coba lagi.', 'error');
+
+                        }
+
+                    }
+
+                    // Reset button state
+
+                    if (feedbackSubmit && feedbackSubmitText && feedbackLoading) {
+
+                        feedbackSubmit.disabled = false;
+
+                        feedbackSubmitText.textContent = 'Kirim Feedback';
+
+                        feedbackLoading.classList.add('hidden');
+
+                    }
+
+                });
+
+            }
+
+        }
+
+        // Filter functionality
+
+        function initializeFilters() {
+
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            const destinationCards = document.querySelectorAll('.destination-card');
+
+            filterBtns.forEach(btn => {
+
+                btn.addEventListener('click', () => {
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    
+
+                    // Update active button
+
+                    filterBtns.forEach(b => {
+
+                        b.classList.remove('active', 'bg-blue-600', 'text-white');
+
+                        b.classList.add('bg-gray-200', 'text-gray-700');
+
+                    });
+
+                    btn.classList.add('active', 'bg-blue-600', 'text-white');
+
+                    btn.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    // Filter cards
+
+                    destinationCards.forEach(card => {
+
+                        const category = card.getAttribute('data-category');
+
+                        if (filter === 'all' || category === filter) {
+
+                            card.style.display = 'block';
+
+                        } else {
+
+                            card.style.display = 'none';
+
+                        }
+
+                    });
+
+                });
+
+            });
+
+        }
+
+        // Rating system
+
+        function initializeRatingSystem() {
+
+            const ratingStars = document.querySelectorAll('#rating-stars i');
+
+            
+
+            ratingStars.forEach((star, index) => {
+
+                star.addEventListener('click', () => {
+
+                    selectedRating = index + 1;
+
+                    updateRatingDisplay();
+
+                });
+
+                star.addEventListener('mouseenter', () => {
+
+                    highlightStars(index + 1);
+
+                });
+
+            });
+
+            const ratingContainer = document.getElementById('rating-stars');
+
+            if (ratingContainer) {
+
+                ratingContainer.addEventListener('mouseleave', () => {
+
+                    updateRatingDisplay();
+
+                });
+
+            }
+
+        }
+
+        function highlightStars(rating) {
+
+            const stars = document.querySelectorAll('#rating-stars i');
+
+            stars.forEach((star, index) => {
+
+                if (index < rating) {
+
+                    star.classList.remove('text-gray-300');
+
+                    star.classList.add('text-yellow-400');
+
+                } else {
+
+                    star.classList.remove('text-yellow-400');
+
+                    star.classList.add('text-gray-300');
+
+                }
+
+            });
+
+        }
+
+        function updateRatingDisplay() {
+
+            highlightStars(selectedRating);
+
+        }
+
+        function resetRating() {
+
+            selectedRating = 0;
+
+            updateRatingDisplay();
+
+        }
+
+        // Utility functions
+
+        function showMessage(message, type) {
+
+            const messageDiv = document.createElement('div');
+
+            messageDiv.className = `fixed top-20 right-4 p-4 rounded-lg shadow-lg z-50 ${
+
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+
+            }`;
+
+            messageDiv.textContent = message;
+
+            
+
+            document.body.appendChild(messageDiv);
+
+            
+
+            setTimeout(() => {
+
+                messageDiv.remove();
+
+            }, 5000);
+
+        }
+
+        // Search functionality
+
+        const searchInput = document.getElementById('search-input');
+
+        if (searchInput) {
+
+            searchInput.addEventListener('input', (e) => {
+
+                const searchTerm = e.target.value.toLowerCase();
+
+                // Implement search logic here
+
+                console.log('Searching for:', searchTerm);
+
+            });
+
+        }
+
+    </script>
+
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99daf0d2e3b7f847',t:'MTc2MzAwMjAwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
