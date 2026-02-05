@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Grace Marcellia Mysie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 80px 20px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header & Navigasi -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">Grace.</div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="nav-link hover:text-blue-600">Home</a>
+                <a href="#about" class="nav-link hover:text-blue-600">About</a>
+                <a href="#portfolio" class="nav-link hover:text-blue-600">Portfolio</a>
+                <a href="#contact" class="nav-link hover:text-blue-600">Contact</a>
+            </div>
+            <div class="md:hidden text-2xl cursor-pointer" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 text-2xl hidden">
+        <div class="absolute top-6 right-6 text-3xl cursor-pointer" id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#portfolio" class="mobile-link">Portfolio</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Beranda (Home) -->
+    <section id="home" class="min-h-screen flex items-center hero-gradient pt-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <p class="text-blue-600 font-semibold mb-2 tracking-widest">“Simple, Powerful, Reliable.”</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                    Grace Marcellia <span class="text-blue-600">Mysie</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-slate-600 mb-6 font-medium italic">
+                    Olahragawan & Public Speaker Muda
+                </h2>
+                <p class="text-lg text-slate-500 mb-8 max-w-lg">
+                    - selamat datang. Saya adalah seorang pembelajar yang berdedikasi tinggi dengan fokus pada pengembangan potensi diri melalui disiplin dan kerja keras.
+                </p>
+                <a href="#portfolio" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 transition duration-300 inline-block">
+                    Lihat Portofolio
+                </a>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-blue-600 rounded-3xl rotate-6 opacity-10"></div>
+                    <div class="absolute inset-0 bg-slate-200 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
+                        <div class="w-full h-full flex items-center justify-center text-slate-400">
+                             <img src="https://raw.githubusercontent.com/marcelliamysie-lab/Portofolio/refs/heads/main/motion_photo_653718253497961866.jpg" alt="Grace Marcellia Mysie" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Saya (About Me) -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center underline decoration-blue-500 decoration-4 underline-offset-8">Tentang Saya</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-600"><i class="fas fa-history mr-2"></i>Latar Belakang</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Saya adalah seorang pelajar yang lahir pada tanggal 21 Maret tahun 2008 di Kota Subang. Saat ini saya sedang menempuh pendidikan di SMAN 1 Subang kelas XII-4. Saya memiliki semangat yang besar untuk terus berkembang baik secara akademik maupun non-akademik.
+                    </p>
+                    <h3 class="text-xl font-bold mb-4 text-blue-600"><i class="fas fa-heart mr-2"></i>Minat & Tujuan</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Saya tertarik pada bidang olahraga, khususnya pencak silat, serta aktif mengikuti berbagai kegiatan dan perlombaan. Melalui pengalaman tersebut, saya belajar tentang kerja keras, tanggung jawab, dan kepercayaan diri dalam mencapai tujuan.
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-inner border border-slate-100">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600"><i class="fas fa-star mr-2"></i>Nilai & Keunggulan</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Saya menjunjung tinggi tanggung jawab, ketekunan, dan rasa peduli terhadap sesama. Berkomitmen untuk terus belajar agar dapat berguna bagi bangsa.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <span class="bg-white border border-blue-200 px-4 py-1 rounded-full text-sm font-semibold text-blue-600">Disiplin</span>
+                        <span class="bg-white border border-blue-200 px-4 py-1 rounded-full text-sm font-semibold text-blue-600">Tanggung Jawab</span>
+                        <span class="bg-white border border-blue-200 px-4 py-1 rounded-full text-sm font-semibold text-blue-600">Komunikatif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian (Skills) -->
+    <section class="section-padding bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500">
+                    <h3 class="text-2xl font-bold mb-6">Hard Skills</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Olahraga Bela Diri (Pencak Silat)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Public Speaking (Speech)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Teknikal Olahraga Volly</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-slate-400">
+                    <h3 class="text-2xl font-bold mb-6">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg font-medium">Ketelitian</span>
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg font-medium">Disiplin</span>
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg font-medium">Kerja Sama Tim</span>
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg font-medium">Empati</span>
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg font-medium">Komunikasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portofolio -->
+    <section id="portfolio" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Portofolio Utama</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-slate-900 text-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                <div class="md:w-1/2 p-12 flex flex-col justify-center">
+                    <span class="text-blue-400 font-bold mb-2 uppercase tracking-widest text-sm">Featured Project</span>
+                    <h3 class="text-3xl font-bold mb-4">Jejak Hidup dan Harapan</h3>
+                    <p class="text-slate-400 mb-6 italic">
+                        "Saya adalah seorang pelajar di SMAN 1 Subang yang lahir pada 21 Maret 2008. Anak kedua dari tiga bersaudara yang bertekad membawa perubahan positif."
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <span class="font-semibold uppercase text-sm">Profil Lengkap 2026</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-blue-600 p-12 flex items-center justify-center relative">
+                    <div class="text-center">
+                        <i class="fas fa-medal text-7xl mb-4 opacity-50"></i>
+                        <h4 class="text-2xl font-bold">SMAN 1 Subang</h4>
+                        <p>Education Milestone</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengalaman / Prestasi -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold mb-8 text-center italic text-slate-500">Pengalaman & Prestasi</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 border border-slate-200 rounded-xl card-hover bg-white text-center">
+                        <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-trophy"></i></div>
+                        <h4 class="font-bold mb-2">Ajang O2SN</h4>
+                        <p class="text-sm text-slate-500">Cabang Pencak Silat</p>
+                    </div>
+                    <div class="p-6 border border-slate-200 rounded-xl card-hover bg-white text-center">
+                        <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-volleyball-ball"></i></div>
+                        <h4 class="font-bold mb-2">Turnamen Volly</h4>
+                        <p class="text-sm text-slate-500">Partisipasi Tim</p>
+                    </div>
+                    <div class="p-6 border border-slate-200 rounded-xl card-hover bg-white text-center">
+                        <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-microphone"></i></div>
+                        <h4 class="font-bold mb-2">Lomba Speech</h4>
+                        <p class="text-sm text-slate-500">Pengalaman Komunikasi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak (Contact) -->
+    <section id="contact" class="section-padding bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">Mari Terhubung</h2>
+                <p class="text-slate-400 mb-12">Punya pertanyaan atau ingin bekerja sama? Hubungi saya melalui saluran di bawah ini.</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <a href="mailto:marcellimys278@gmail.com" class="p-8 bg-slate-800 rounded-2xl hover:bg-blue-600 transition duration-300 block border border-slate-700">
+                        <i class="fas fa-envelope text-3xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Email</h4>
+                        <p class="text-sm">marcellimys278@gmail.com</p>
+                    </a>
+                    <a href="https://instagram.com/graceemarclly" target="_blank" class="p-8 bg-slate-800 rounded-2xl hover:bg-pink-600 transition duration-300 block border border-slate-700">
+                        <i class="fab fa-instagram text-3xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Instagram</h4>
+                        <p class="text-sm">@graceemarclly</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <span class="text-2xl font-bold text-blue-600">Grace.</span>
+                <p class="text-slate-500 text-sm mt-2">Dibuat dengan dedikasi untuk tugas PKWU 2026.</p>
+            </div>
+            <div class="flex space-x-6 text-slate-400 mb-6 md:mb-0">
+                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="fas fa-envelope text-xl"></i></a>
+            </div>
+            <div class="text-slate-400 text-sm">
+                &copy; Grace-2026. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Simple smooth scroll behavior (jika browser tidak mendukung native smooth scroll)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
